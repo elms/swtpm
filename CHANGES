@@ -1,5 +1,18 @@
 CHANGES - changes for swtpm
 
+version 0.5.0:
+  - swtpm_setup:
+    - Removed remaining 'c' wrapper program
+  - swtpm-localca:
+    - Rewrite in python
+    - Allow passing pkcs11 PIN using signingkey_password
+    - Allow passing environment variables needed for pkcs11 modules via
+      swtpm-localca.conf anf format 'env:VARNAME=VALUE'.
+  - build-sys:
+    - add configure option to disable installation of Python module
+    - Use -Wl,-z,relro and -Wl,-z,now only when linking (clang)
+    - Use AC_LINK_IFELSE to check whether support for hardening flags
+
 version 0.4.0:
   - swtpm:
     - Invoke print capabilities after choosing TPM version
